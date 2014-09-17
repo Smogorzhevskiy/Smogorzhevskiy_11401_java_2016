@@ -6,7 +6,7 @@ public class P5 {
         Scanner sc=new Scanner(System.in);
           int x = sc.nextInt();
         int n=0;
-        while (x>0);
+        while (x>0)
         {
             n = n + (x % 10);
             x = x / 10;
