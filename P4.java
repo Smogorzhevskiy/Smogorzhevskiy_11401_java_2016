@@ -6,8 +6,7 @@ public class P4 {
         Scanner sc=new Scanner(System.in);
         int x=sc.nextInt();
         int k=0;
-        while (x>1);
-        {
+        while (x>1) {
             if (x % 2 == 0)
                 x = x / 2;
             else
