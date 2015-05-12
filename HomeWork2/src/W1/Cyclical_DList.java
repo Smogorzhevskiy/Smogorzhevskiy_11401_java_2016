@@ -1,5 +1,8 @@
-// Двухсторонний список
-public class DList<T> {
+package W1;
+
+// Цикличный список
+public class Cyclical_DList<T> {
+
     class DLNode<T> {
         T elem;
         DLNode next;
@@ -7,66 +10,72 @@ public class DList<T> {
     }
 
     private DLNode<T> head;
-    private DLNode<T> cur;
     private DLNode<T> last;
+    private DLNode<T> cur;
 
-    public DList() {
+
+    public Cyclical_DList() {
         head = null;
         last = null;
     }
 
-    public void addStart(T x) {
+    public void addStart(T elem) {
         DLNode p = new DLNode();
-        p.elem = x;
+        p.elem = elem;
         p.next = head;
         if (head != null)
             head.prev = p;
         if (head == null) {
             last = p;
-            last.next = null;
+            last.next = head;
             last.prev = head;
         }
         head = p;
-        p.prev = null;
+        last.next = head;
+        p.prev = last;
     }
 
     public void addEnd(T x) {
         DLNode p = new DLNode();
         p.elem = x;
-        p.next = null;
+        p.next = head;
         p.prev = last;
         if (last != null)
             last.next = p;
         last = p;
         if (head == null) {
             head = p;
-            head.prev = null;
+            head.prev = last;
         }
     }
 
-    public T getFirst() {
+    public T getStart() {
         return head.elem;
-    }
-
-    public T getLast() {
-        return last.elem;
     }
 
     public void deleteStart() {
         if (head != null) {
-            head = head.next;
-            if(head!=null)
-                head.prev = null;
-            else last=null;
+            if (head != last) {
+                head = head.next;
+                head.prev = last;
+            }
+            else {
+                head=null;
+                last=null;
+            }
         } else System.out.println("Nothing to delete");
     }
 
     public void deleteEnd() {
-        if (last!=null) {
-            last = last.prev;
-            if (last!=null)
-                last.next = null;
-            else head=null;
+        if (last != null) {
+            if (last!=head) {
+                last = last.prev;
+                last.next = head;
+            }
+            else {
+                head=null;
+                last=null;
+            }
         } else System.out.println("Nothing to delete");
     }
 
@@ -86,12 +95,11 @@ public class DList<T> {
         return cur.elem;
     }
 
-    public boolean isEnd() {
-        return cur == null;
-    }
-
     public boolean isEmpty() {
         return head == null;
     }
-}
 
+    public T getEnd() {
+        return last.elem;
+    }
+}

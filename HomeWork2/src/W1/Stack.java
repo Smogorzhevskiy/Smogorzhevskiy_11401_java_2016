@@ -1,3 +1,8 @@
+package W1;
+
+import W1.List;
+import W1.MyException;
+
 public class Stack<T> {
     List<T> l;
     public Stack(){
@@ -8,7 +13,7 @@ public class Stack<T> {
         l.addStart(x);
     }
 
-    public T pop() throws MyException{
+    public T pop() throws MyException {
         if (isEmpty()) throw new MyException();
         else {
             l.moveStart();

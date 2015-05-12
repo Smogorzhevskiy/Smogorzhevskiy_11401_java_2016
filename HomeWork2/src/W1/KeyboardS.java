@@ -1,3 +1,5 @@
+package W1;
+
 import java.util.Scanner;
 public class KeyboardS {
     public static void main(String[] args) throws MyException {
