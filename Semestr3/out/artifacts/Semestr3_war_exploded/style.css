@@ -1,0 +1,46 @@
+#wrapper{
+width: 960px;
+    margin: auto;
+}
+
+#header{
+    overflow: hidden;
+}
+
+#logo {
+width: 204px;
+    height: 136px;
+    float: left;
+    margin-left: -2px;
+}
+
+#menu{
+    width: 960px;
+    height: 70px;
+    background: #000;
+}
+
+#menu ul{
+    padding-left: 40px;
+    padding-top: 23px;
+    overflow: hidden;
+}
+
+#menu ul li {
+    float: left;
+    font: bolt 18px Arial, Verdana, sans-serif;
+    color: #fff;
+    margin-right: 70px;
+
+}
+
+#menu ul li a {
+    color: #fff;
+    text-decoration: none;
+}
+
+#menu ul li a:hover{
+    text-decoration: underline;
+
+}
+
