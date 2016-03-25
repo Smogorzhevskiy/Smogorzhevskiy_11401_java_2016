@@ -1,0 +1,15 @@
+package Task010.Interface;
+
+public interface Unit {
+
+
+    public String check_Invent();
+    public void lvlUp();
+    public int useSkill();
+    public String getInformation();
+    public void autoCompleteCell();
+
+}
+
+
+
