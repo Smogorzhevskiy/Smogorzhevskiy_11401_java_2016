@@ -1,11 +1,12 @@
 package Task013;
 
-/**
- * Created by User on 21.03.16.
- */
+
 public class User {
     String name;
     String mail;
+
+    public User() {
+    }
 
     public User(String name, String mail) {
         setName(name);
@@ -18,6 +19,8 @@ public class User {
 
     public void setMail(String mail) {
         this.mail = mail;
+        System.out.println("name: " + name + " mail: " + mail);
+
     }
 
     public String getName() {

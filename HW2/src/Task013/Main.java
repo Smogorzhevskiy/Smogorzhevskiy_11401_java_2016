@@ -1,14 +1,16 @@
 package Task013;
 
-/**
- * Created by User on 21.03.16.
- */
+import org.springframework.context.ApplicationContext;
+import org.springframework.context.annotation.AnnotationConfigApplicationContext;
+
 public class Main {
 
     public static void main(String[] args) {
         String name = "Logan";
-        String mail = "x-men@gmail.com";
-        User user = new User(name, mail);
-        System.out.println("name: " + user.name + " mail" + user.mail);
+        String mail = "xmen@gmail.com";
+        ApplicationContext context = new AnnotationConfigApplicationContext(AopConfig.class);
+        User user = context.getBean(User.class);
+        user.setName(name);
+        user.setMail(mail);
     }
 }
