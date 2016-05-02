@@ -1,0 +1,15 @@
+<component name="libraryTable">
+  <library name="com.framework-x:jpa-plugin:1.0-alpha-2" type="repository">
+    <properties maven-id="com.framework-x:jpa-plugin:1.0-alpha-2" />
+    <CLASSES>
+      <root url="jar://$MAVEN_REPOSITORY$/com/framework-x/jpa-plugin/1.0-alpha-2/jpa-plugin-1.0-alpha-2.jar!/" />
+      <root url="jar://$MAVEN_REPOSITORY$/com/framework-x/framework-x/1.0-alpha-2/framework-x-1.0-alpha-2.jar!/" />
+      <root url="jar://$MAVEN_REPOSITORY$/commons-io/commons-io/2.0.1/commons-io-2.0.1.jar!/" />
+      <root url="jar://$MAVEN_REPOSITORY$/commons-lang/commons-lang/2.5/commons-lang-2.5.jar!/" />
+      <root url="jar://$MAVEN_REPOSITORY$/com/thoughtworks/paranamer/paranamer/2.3/paranamer-2.3.jar!/" />
+      <root url="jar://$MAVEN_REPOSITORY$/javax/javaee-web-api/6.0/javaee-web-api-6.0.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

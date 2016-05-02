@@ -1,0 +1,13 @@
+<component name="ArtifactManager">
+  <artifact type="exploded-war" name="ClassWork(Hibernate_2016.04.08):war exploded">
+    <output-path>$PROJECT_DIR$/out/artifacts/ClassWork_Hibernate_2016_04_08__war_exploded</output-path>
+    <root id="root">
+      <element id="javaee-facet-resources" facet="ClassWork(Hibernate_2016.04.08)/web/Web" />
+      <element id="directory" name="WEB-INF">
+        <element id="directory" name="classes">
+          <element id="module-output" name="ClassWork(Hibernate_2016.04.08)" />
+        </element>
+      </element>
+    </root>
+  </artifact>
+</component>

@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+
+       <bean id="Databases" class="Lesson" >
+              <constructor-arg value="Databases"/>
+       </bean>
+
+       <bean id="Programming" class="Lesson" >
+              <constructor-arg value="Programming"/>
+       </bean>
+
+       <bean id="English" class="Lesson" >
+              <constructor-arg value="English"/>
+       </bean>
+
+       <bean id="TVIMS" class="Lesson" >
+              <constructor-arg value="TVIMS"/>
+       </bean>
+
+       <bean id="KFU" class="Institute" >
+              <constructor-arg value="KFU"/>
+       </bean>
+
+       <bean id="KAI" class="Institute" >
+              <constructor-arg value="KAI"/>
+       </bean>
+       <bean id="Chernov" class="Student" >
+              <constructor-arg value="Chernov"/>
+              <constructor-arg ref="KAI"></constructor-arg>
+              <property name="Lessons">
+                     <list>
+                            <ref bean="TVIMS"></ref>
+                            <ref bean="English"></ref>
+                            <ref bean="Programming"></ref>
+                     </list>
+              </property>
+       </bean>
+       <bean id="Chernov2" class="Student" >
+              <constructor-arg value="Chernov2"/>
+              <constructor-arg ref="KAI"></constructor-arg>
+              <property name="Lessons">
+                     <list>
+                            <ref bean="TVIMS"></ref>
+                            <ref bean="Databases"></ref>
+                     </list>
+              </property>
+       </bean>
+
+       <bean id="Main" class="Building"
+             factory-method="newBuilding">
+              <constructor-arg value="Main"/>
+              <constructor-arg ref="KFU"/>
+       </bean>
+</beans>

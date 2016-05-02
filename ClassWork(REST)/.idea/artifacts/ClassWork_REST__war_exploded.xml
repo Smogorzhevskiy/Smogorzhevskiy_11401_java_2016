@@ -1,0 +1,21 @@
+<component name="ArtifactManager">
+  <artifact type="exploded-war" name="ClassWork(REST):war exploded">
+    <output-path>$PROJECT_DIR$/out/artifacts/ClassWork_REST__war_exploded</output-path>
+    <root id="root">
+      <element id="javaee-facet-resources" facet="ClassWork(REST)/web/Web" />
+      <element id="directory" name="WEB-INF">
+        <element id="directory" name="classes">
+          <element id="module-output" name="ClassWork(REST)" />
+          <element id="library" level="project" name="apache-tomcat-8.0" />
+        </element>
+        <element id="directory" name="lib">
+          <element id="library" level="project" name="Spring-4.2.5.RELEASE" />
+          <element id="library" level="project" name="Spring MVC-4.2.5.RELEASE" />
+          <element id="library" level="project" name="mysql-connector-java-5.1.36-bin" />
+          <element id="library" level="project" name="java-json-schema" />
+          <element id="library" level="project" name="com.fasterxml.jackson.core:jackson-databind:2.5.1" />
+        </element>
+      </element>
+    </root>
+  </artifact>
+</component>

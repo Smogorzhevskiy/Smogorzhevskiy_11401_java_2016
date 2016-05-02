@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:p="http://www.springframework.org/schema/p"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <bean id="premiuminvent" class="Task006.PremiumInvent"
+          p:weapon1-ref="sword"
+          p:weapon2-ref="bow"
+          p:potion1-ref="damagepotion"
+          p:potion2-ref="healthpotion"
+    />
+    <bean id="standartinvent" class="Task006.StandartInvent"
+          p:weapon-ref="sword"
+          p:potion-ref="damagepotion"
+    />
+
+    <bean id="elfscout" class="Task006.ElfScout"
+          p:race-ref="elf"
+          p:inventory-ref="premiuminvent"
+
+    />
+
+    <bean id="humanguard" class="Task006.HumanGuard"
+          p:race-ref="human"
+          p:inventory-ref="standartinvent"
+    />
+
+    <bean id="sword" class="Task006.Sword"></bean>
+
+    <bean id="bow" class="Task006.Bow"></bean>
+
+    <bean id="healthpotion" class="Task006.HealthPotion"
+          p:effect-ref="treatment"
+    />
+
+    <bean id="damagepotion" class="Task006.DamagePotion"
+          p:effect-ref="anger"
+    />
+
+    <bean id="anger" class="Task006.Anger"></bean>
+
+    <bean id="treatment" class="Task006.Treatment"></bean>
+
+    <bean id="elf" class="Task006.Elf"
+          p:capacity-ref="treatment"
+    />
+
+    <bean id="human" class="Task006.Human"
+          p:capacity-ref="anger"
+    />
+
+</beans>
