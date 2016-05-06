@@ -15,7 +15,7 @@
 
 
     <context:property-placeholder location="classpath:database.properties" ignore-unresolvable="true"/>
-    <jpa:repositories base-package="com.smogorzhevskiy.crm.repositories"/>
+    <jpa:repositories base-package="com.smogorzhevskiy.repository"/>
 
 
     <bean id="dataSource" class="org.springframework.jdbc.datasource.DriverManagerDataSource">
@@ -26,14 +26,14 @@
     </bean>
     <bean id="entityManagerFactory" class="org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean">
         <property name="dataSource" ref="dataSource"/>
-        <property name="packagesToScan" value="com.smogorzhevskiy.crm.entities"/>
+        <property name="packagesToScan" value="com.smogorzhevskiy.entities"/>
 
         <property name="jpaVendorAdapter">
             <bean class="org.springframework.orm.jpa.vendor.HibernateJpaVendorAdapter">
                 <property name="database" value="POSTGRESQL"/>
                 <property name="showSql" value="true"/>
                 <property name="generateDdl" value="false"/>
-                <property name="databasePlatform" value="org.hibernate.dialect.PostgreSQL82Dialect"/>
+                <property name="databasePlatform" value="org.hibernate.dialect.PostgreSQL9Dialect"/>
             </bean>
         </property>
 
