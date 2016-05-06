@@ -7,6 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+import java.util.Date;
 import java.util.List;
 
 /**
@@ -17,20 +18,23 @@ public class ContractServiceImpl implements ContractService {
     @Autowired
     private ContractRepository contractRepository;
 
-
     @Override
-    public Contract getOneByName(String name) {
-        return null;
+    public Contract findOneById(Integer id) {
+        return contractRepository.findOneById(id);
     }
 
     @Override
-    public Contract findOneById(Integer id) {
-        return null;
-//        return contractRepository.findOneById(id);
+    public Contract findContractByArtist(String name) {
+        return contractRepository.findContractByArtist(name);
     }
 
     @Override
     public List<Contract> getAll() {
         return contractRepository.findAll();
+    }
+
+    @Override
+    public List<Contract> findAllContractByDateOfConclusion(Date dateOfConclusion) {
+        return contractRepository.findAllContractByDateOfConclusion(dateOfConclusion);
     }
 }

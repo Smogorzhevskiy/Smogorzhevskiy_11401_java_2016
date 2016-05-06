@@ -25,11 +25,11 @@ public class ArtistServiceImpl implements ArtistService {
     private CredentialRepository credentialRepository;
 
     @Transactional
-    public void addArtist(ArtistCreationForm form){
-        Credential credential = ArtistFromRegForm.transfromCredential(form);
+    public void createArtist(ArtistCreationForm form){
+        Credential credential = ArtistFromRegForm.transformCredential(form);
         credentialRepository.save(credential);
-        Artist moderator = ArtistFromRegForm.moderTransform(form, credential);
-        artistRepository.save(moderator);
+        Artist artist = ArtistFromRegForm.artistTransform(form, credential);
+        artistRepository.save(artist);
     }
 
     @Override
@@ -39,22 +39,22 @@ public class ArtistServiceImpl implements ArtistService {
     }
 
     @Override
-    public Artist getByNameArtist(String name) {
-        return null;
+    public Artist getOneByName(String name) {
+        return artistRepository.getOneByName(name);
     }
 
     @Override
-    public Artist editArtist(Artist bank) {
-        return null;
+    public Artist findOneByCredentialLogin(String login) {
+        return artistRepository.findOneByCredentialLogin(login);
     }
 
     @Override
-    public List<Artist> getAllArtists() {
+    public List<Artist> findAll() {
         return (List<Artist>) artistRepository.findAll();
     }
 
     @Override
-    public Artist findByOneRole(Credential role) {
-        return null;
+    public Artist findOneByCredential(Credential credential) {
+        return artistRepository.findOneByCredential(credential);
     }
 }

@@ -12,7 +12,7 @@ import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 public class ArtistFromRegForm {
         static BCryptPasswordEncoder encoder = new BCryptPasswordEncoder();
 
-        public static Artist moderTransform(ArtistCreationForm form, Credential credential){
+        public static Artist artistTransform(ArtistCreationForm form, Credential credential){
             if(form==null)
                 return null;
             Artist artist=new Artist();
@@ -22,7 +22,7 @@ public class ArtistFromRegForm {
             return artist;
         }
 
-        public static Credential transfromCredential(ArtistCreationForm form){
+        public static Credential transformCredential(ArtistCreationForm form){
             if(form==null)
                 return null;
             Credential credential = new Credential();

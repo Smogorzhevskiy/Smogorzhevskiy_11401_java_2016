@@ -29,7 +29,7 @@ public class PictureServiceImpl implements PictureService {
             return null;
         Picture picture = new Picture();
         picture.setName(form.getName());
-        picture.setArtist_id(artistRepository.findByName(form.getArtist()).getId());
+        picture.setArtist_id(artistRepository.getOneByName(form.getArtist()).getId());
 
 
         pictureRepository.save(picture);

@@ -8,7 +8,5 @@ import java.util.List;
  * Created by User on 19.04.16.
  */
 public interface DirectionService {
-    Direction addDirection(Direction gallery);
-    List<Direction> getAllDirections();
-
+    List<Direction> findAll();
 }

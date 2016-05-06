@@ -6,6 +6,7 @@ import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.query.Param;
 import org.springframework.stereotype.Repository;
 
+import java.util.Date;
 import java.util.List;
 
 /**
@@ -14,10 +15,10 @@ import java.util.List;
 @Repository
 public interface ContractRepository extends JpaRepository<Contract,Integer> {
 
-//
-//    List<Contract> findAll();
-//
-//    Contract findOneByName(String name);
-//
-//    Contract findOneById(Artist id);
+    Contract findContractByArtist(String name);
+    List<Contract> findAll();
+
+    Contract findOneById(Integer id);
+
+    List<Contract> findAllContractByDateOfConclusion(Date dateOfConclusion);
 }

@@ -20,10 +20,21 @@ public class ArtistCreationForm {
     @Size(min = 5, max = 16, message = "password should consist of no less than 5, and no more than 16 characters")
     private String password;
 
+    @Size(min = 5, max = 16, message = "password should consist of no less than 5, and no more than 16 characters")
+    private String repassword;
+
     @Email(regexp = ".+@.+", message = "incorrect email")
     private String email;
 
     public String direction;
+
+    public String getRepassword() {
+        return repassword;
+    }
+
+    public void setRepassword(String repassword) {
+        this.repassword = repassword;
+    }
 
     public String getDirection() {
         return direction;
@@ -72,4 +83,5 @@ public class ArtistCreationForm {
     public void setEmail(String email) {
         this.email = email;
     }
+
 }

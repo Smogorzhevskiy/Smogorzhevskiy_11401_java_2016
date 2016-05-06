@@ -19,21 +19,21 @@ public class GalleryServiceImpl implements GalleryService {
 
     @Override
     public List<Gallery> findAll() {
-        return null;
+        return galleryRepository.findAll();
     }
 
     @Override
     public Gallery findOneByAddress(String address) {
-        return null;
+        return galleryRepository.findOneByAddress(address);
     }
 
     @Override
     public Gallery findOneByName(String name) {
-        return null;
+        return galleryRepository.findOneByName(name);
     }
 
     @Override
     public Gallery findOneById(Long id) {
-        return null;
+        return galleryRepository.findOneById(id);
     }
 }

@@ -16,14 +16,9 @@ public class DirectionServiceImpl implements DirectionService {
     @Autowired
     private DirectionRepository directionRepository;
 
-    @Override
-    public Direction addDirection(Direction direction) {
-        Direction saveDirection = directionRepository.saveAndFlush(direction);
-        return saveDirection;
-    }
 
     @Override
-    public List<Direction> getAllDirections() {
-        return (List<Direction>) directionRepository.findAll();
+    public List<Direction> findAll() {
+        return directionRepository.findAll();
     }
 }

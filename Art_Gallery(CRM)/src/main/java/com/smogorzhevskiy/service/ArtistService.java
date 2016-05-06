@@ -11,10 +11,11 @@ import java.util.List;
  * Created by User on 19.04.16.
  */
 public interface ArtistService {
-    void addArtist(ArtistCreationForm form);
-    void delete(java.lang.Integer id);
-    Artist getByNameArtist(String name);
-    Artist editArtist(Artist bank);
-    List<Artist> getAllArtists();
-    Artist findByOneRole(Credential role);
+    void createArtist(ArtistCreationForm form);
+    void delete(Integer id);
+    Artist getOneByName(String name);
+    Artist findOneByCredentialLogin(String login);
+    List<Artist> findAll();
+    Artist findOneByCredential(Credential role);
+
 }
