@@ -3,6 +3,7 @@ package com.smogorzhevskiy.controllers;
 import com.smogorzhevskiy.entities.Credential;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.context.SecurityContextHolder;
+import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -13,6 +14,7 @@ import javax.servlet.http.HttpServletRequest;
 /**
  * Created by User on 06.05.16.
  */
+@Controller
 public class AuthenticController {
     @Autowired
     private HttpServletRequest request;
@@ -20,7 +22,7 @@ public class AuthenticController {
     @RequestMapping(value = "/", method = RequestMethod.GET)
     public String def() {
         request.getSession().setAttribute("user", null);
-        return "redirect:/login";
+        return "redirect:/main#slide-6";
     }
 
     @RequestMapping(value = "/login", method = RequestMethod.GET)
@@ -28,7 +30,7 @@ public class AuthenticController {
         if (Boolean.TRUE.equals(error)) {
             model.addAttribute("error", error);
         }
-        return "/login";
+        return "redirect:/main#slide-6";
     }
 
     @RequestMapping(value = "/default", method = RequestMethod.GET)

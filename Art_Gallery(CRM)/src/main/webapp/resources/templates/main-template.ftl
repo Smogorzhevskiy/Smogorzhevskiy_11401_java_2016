@@ -5,48 +5,82 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <title>${title}</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- Bootstrap Core CSS -->
-    <link href="../css/bootstrap.min.css" rel="stylesheet">
-    <!-- Custom CSS -->
-    <link href="../css/sb-admin.css" rel="stylesheet">
-    <!-- Morris Charts CSS -->
-    <link href="../css/plugins/morris.css" rel="stylesheet">
-    <!-- Custom Fonts -->
-    <link href="../font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+
+    <title>Crm(Art_Gallery)</title>
+    <meta name="description" content="BlackTie.co - Free Handsome Bootstrap Themes"/>
+    <meta name="keywords" content="themes, bootstrap, free, templates, bootstrap 3, freebie,">
+    <meta property="og:title" content="">
+
+    <link rel="stylesheet" type="text/css" href="/resources/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/resources/fancybox/jquery.fancybox-v=2.1.5.css" type="text/css" media="screen">
+    <link rel="stylesheet" href="/resources/css/font-awesome.min.css">
+
+    <link rel="stylesheet" type="text/css" href="/resources/css/style.css">
+
+    <link href='http://fonts.googleapis.com/css?family=Titillium+Web:400,600,300,200&subset=latin,latin-ext'
+          rel='stylesheet' type='text/css'>
+
+
+    <link rel="prefetch" href="/resources/images/zoom.png">
 
     <#list customStyles as style>
         <link rel="stylesheet" type="text/css" href="${style}"/>
     </#list>
+
+    <!-- SCRIPTS -->
+    <script src="/resources/js/html5shiv.js"></script>
+    <script src="/resources/js/jquery-1.10.2.min.js"></script>
+    <script src="/resources/js/jquery-migrate-1.2.1.min.js"></script>
+    <script src="/resources/js/bootstrap.min.js"></script>
+    <script src="/resources/js/jquery.easing.1.3.js"></script>
+    <script type="text/javascript" src="/resources/fancybox/jquery.fancybox.pack-v=2.1.5.js"></script>
+    <script src="/resources/js/script.js"></script>
+
+
+    <!-- fancybox init -->
+    <script>
+        $(document).ready(function () {
+            var lis = $('.nav > li');
+            menu_focus(lis[0], 1);
+
+            $(".fancybox").fancybox({
+                padding: 10,
+                helpers: {
+                    overlay: {
+                        locked: false
+                    }
+                }
+            });
+
+        });
+    </script>
+    <#list customScripts as script>
+        <script src="${script}"></script>
+    </#list>
 </head>
+
 <body>
-<div id="wrapper">
     <#include "header.ftl"/>
-    <div id="page-wrapper">
-        <div class="container-fluid">
+<!-- === Arrows === -->
+<div id="arrows">
+    <div id="arrow-up" class="disabled"></div>
+    <div id="arrow-down"></div>
+    <div id="arrow-left" class="disabled visible-lg"></div>
+    <div id="arrow-right" class="disabled visible-lg"></div>
+</div><!-- /.arrows -->
+<div >
             <@m_body/>
-        </div>
     </div>
-    <!-- /#page-wrapper -->
-</div>
+
+
 <!-- /#wrapper -->
 
 
 <#--<#include "footer.ftl"/>
 -->
-<!-- jQuery -->
-<script src="../js/jquery.js"></script>
-<!-- Bootstrap Core JavaScript -->
-<script src="../js/bootstrap.min.js"></script>
-<!-- Morris Charts JavaScript -->
-<script src="../js/plugins/morris/raphael.min.js"></script>
-<script src="../js/plugins/morris/morris.min.js"></script>
-<script src="../js/plugins/morris/morris-data.js"></script>
-    <#list customScripts as script>
-    <script src="${script}"></script>
-    </#list>
+
 </body>
 </html>
 </#macro>

@@ -1,19 +1,8 @@
 <#--<%@ page contentType="text/html;charset=UTF-8" language="java" %>-->
-
-
+<#include "main-template.ftl"/>
 <!DOCTYPE html>
-
-<html lang="en">
-<head>
-    <meta charset="utf-8">
-
-
-</head>
-<body>
-
-
 <#--<#macro m_body>-->
-
+<body>
 
 <section id="main-slider" class="carousel">
     <div class="col-md-5 col-lg-offset-5 text-center">
@@ -44,14 +33,7 @@
     </div>
 
 </section>
-
-
-<#--</#macro>-->
-
-<#--<@main title="Login"/>-->
 </body>
 
-
-</html>
 
 

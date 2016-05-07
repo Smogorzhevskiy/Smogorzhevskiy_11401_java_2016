@@ -39,13 +39,13 @@ public class RegistrationController {
     }
 
     @RequestMapping(value = "/artist", method = RequestMethod.POST)
-    public String registerModer(@ModelAttribute("moder_form") @Valid ArtistCreationForm form, BindingResult result) {
+    public String registerModer(@ModelAttribute("artist_form") @Valid ArtistCreationForm form, BindingResult result) {
         validator.validate(form, result);
         if (result.hasErrors()) {
             return "/artist_reg";
         }
         artistService.createArtist(form);
-        return "redirect:/login";
+        return "redirect:/main#slide-6";
     }
 
 

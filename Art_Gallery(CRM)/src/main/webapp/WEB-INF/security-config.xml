@@ -10,10 +10,10 @@
     <security:http auto-config="true" use-expressions="true">
         <security:intercept-url pattern="/login" access="isAnonymous()"/>
         <security:intercept-url pattern="/registration" access="isAnonymous()"/>
-        <security:intercept-url pattern="/index" access="isAnonymous()"/>
+        <security:intercept-url pattern="/main" access="permitAll()"/>
         <security:intercept-url pattern="/resources/**" access="permitAll()"/>
         <security:intercept-url pattern="/admin/**" access="hasAnyRole('ROLE_ADMIN')"/>
-        <security:intercept-url pattern="/artist/**" access="hasAnyRole('ROLE_ARTIST')"/>
+        <security:intercept-url pattern="/artist/**" access="isAnonymous()"/>
         <security:form-login
                 login-page="/login"
                 login-processing-url="/login/process"
@@ -23,7 +23,7 @@
                 always-use-default-target="true"
                 authentication-failure-url="/login?error=true"/>
         <security:logout logout-url="/logout" logout-success-url="/"/>
-        <!--<security:csrf disabled="true"/>-->
+        <security:csrf disabled="true"/>
         <security:access-denied-handler ref="accessDeniedHandler"/>
     </security:http>
 
