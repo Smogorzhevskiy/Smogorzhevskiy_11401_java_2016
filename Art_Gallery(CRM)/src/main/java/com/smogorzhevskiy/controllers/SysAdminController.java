@@ -31,7 +31,7 @@ public class SysAdminController {
     Validator validator;
 
     @RequestMapping(value = "/sysadmin", method = RequestMethod.GET)
-    public String publAddBook(Model model){
+    public String addAdmins(Model model){
         Credential credential = (Credential)request.getSession().getAttribute("user");
         model.addAttribute("user", credential);
         model.addAttribute("admin_form", new AdminRegistrationForm());

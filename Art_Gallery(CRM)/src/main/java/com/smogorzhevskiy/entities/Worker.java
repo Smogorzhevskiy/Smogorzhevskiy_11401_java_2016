@@ -9,7 +9,7 @@ import java.sql.Date;
  */
 @Entity
 @Table(name = "worker")
-@SequenceGenerator(sequenceName = "worker-id_seq", name = "worker_gen", allocationSize = 1)
+@SequenceGenerator(sequenceName = "worker_id_seq", name = "worker_gen", allocationSize = 1)
 public class Worker {
     private Integer id;
     private Credential credential;

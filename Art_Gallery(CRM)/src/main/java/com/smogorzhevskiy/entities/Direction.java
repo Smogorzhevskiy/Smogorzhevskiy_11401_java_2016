@@ -8,7 +8,7 @@ import javax.validation.constraints.NotNull;
  */
 @Entity
 @Table(name = "direction")
-@SequenceGenerator(sequenceName = "direction-id_seq", name = "direction_gen", allocationSize = 1)
+@SequenceGenerator(sequenceName = "direction_id_seq", name = "direction_gen", allocationSize = 1)
 public class Direction {
     private Integer id;
     private String name;

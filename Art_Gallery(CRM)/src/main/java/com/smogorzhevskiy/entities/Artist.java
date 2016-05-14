@@ -7,7 +7,7 @@ import javax.persistence.*;
  */
 @Entity
 @Table(name = "artist")
-@SequenceGenerator(sequenceName = "artist-id_seq", name = "artist-id_seq", allocationSize = 1)
+@SequenceGenerator(sequenceName = "artist_id_seq", name = "artist_id_seq", allocationSize = 1)
 public class Artist {
     private Integer id;
     private Credential credential;
@@ -17,7 +17,7 @@ public class Artist {
     private Gallery gallery;
 
     @Id
-    @GeneratedValue(generator = "artist-id_seq", strategy = GenerationType.SEQUENCE)
+    @GeneratedValue(generator = "artist_id_seq", strategy = GenerationType.SEQUENCE)
     @Column(name = "id")
     public Integer getId() {
         return id;
@@ -44,10 +44,13 @@ public class Artist {
     }
 
     @ManyToOne(targetEntity = Gallery.class)
-    @JoinColumn(name = "gallery_id", referencedColumnName = "id")
+    @JoinColumn(name = "gallery_id", referencedColumnName = "id", insertable = false, updatable = false)
     public Gallery getGallery() {
         return gallery;
     }
+
+    public Integer getGallery_id(){return gallery.getId();}
+    public void setGallery_id(Integer gallery_id){this.gallery.setId(gallery_id);}
 
     public void setGallery(Gallery gallery) {
         this.gallery = gallery;
@@ -90,6 +93,14 @@ public class Artist {
     public void setDirection(Direction direction) {
         this.direction = direction;
     }
+
+
+    public Integer getDirection_id(){return direction.getId();}
+    public void setDirection_id(Integer direction_id){this.direction.setId(direction_id);}
+
+
+
+
 
     @Override
     public int hashCode() {

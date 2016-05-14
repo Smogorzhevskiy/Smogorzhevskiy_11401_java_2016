@@ -8,7 +8,7 @@ import javax.validation.constraints.NotNull;
  */
 @Entity
 @Table(name = "system_admin")
-@SequenceGenerator(sequenceName = "system_admin-id_seq", name = "system_admin_gen", allocationSize = 1)
+@SequenceGenerator(sequenceName = "system_admin_id_seq", name = "system_admin_gen", allocationSize = 1)
 public class Admin {
     private Integer id;
     private Credential credential;

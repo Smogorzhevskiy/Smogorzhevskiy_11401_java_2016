@@ -10,6 +10,8 @@ public class PictureCreationForm {
     private String name;
     @Size(min = 1, max = 20, message = "incorrect name")
     private String artist;
+    @Size(min = 1, max = 20, message = "incorrect name")
+    private String gallery;
 
     public String getArtist() {
         return artist;
@@ -25,5 +27,13 @@ public class PictureCreationForm {
 
     public void setName(String name) {
         this.name = name;
+    }
+
+    public String getGallery() {
+        return gallery;
+    }
+
+    public void setGallery(String gallery) {
+        this.gallery = gallery;
     }
 }

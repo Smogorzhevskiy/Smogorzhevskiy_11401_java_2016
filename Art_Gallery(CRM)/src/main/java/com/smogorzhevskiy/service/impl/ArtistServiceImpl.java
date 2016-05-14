@@ -5,8 +5,10 @@ import com.smogorzhevskiy.entities.Credential;
 import com.smogorzhevskiy.forms.ArtistCreationForm;
 import com.smogorzhevskiy.repository.ArtistRepository;
 import com.smogorzhevskiy.repository.CredentialRepository;
+import com.smogorzhevskiy.repository.DirectionRepository;
+import com.smogorzhevskiy.repository.GalleryRepository;
 import com.smogorzhevskiy.service.ArtistService;
-import com.smogorzhevskiy.utility.transformers.ArtistFromRegForm;
+import com.smogorzhevskiy.utility.transformers.TransformFromRegForm;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -23,13 +25,27 @@ public class ArtistServiceImpl implements ArtistService {
 
     @Autowired
     private CredentialRepository credentialRepository;
+    @Autowired
+    private GalleryRepository galleryRepository;
+    @Autowired
+    private DirectionRepository directionRepository;
 
     @Transactional
-    public void createArtist(ArtistCreationForm form){
-        Credential credential = ArtistFromRegForm.transformCredential(form);
+    public void createArtist(ArtistCreationForm form) {
+
+
+        Credential credential = TransformFromRegForm.transformArtistFormCredential(form);
         credentialRepository.save(credential);
-        Artist artist = ArtistFromRegForm.artistTransform(form, credential);
+        Artist artist = new Artist();
+        artist.setName(form.getName());
+        artist.setCredential(credential);
+        artist.setSurname(form.getSurname());
+        artist.setDirection(directionRepository.findOneByName(form.getDirection()));
+        artist.setDirection_id(directionRepository.findOneByName(form.getDirection()).getId());
+        artist.setGallery(galleryRepository.findOneByName(form.getGallery()));
+        artist.setGallery_id(galleryRepository.findOneByName(form.getGallery()).getId());
         artistRepository.save(artist);
+
     }
 
     @Override

@@ -26,7 +26,10 @@ public class ArtistCreationForm {
     @Email(regexp = ".+@.+", message = "incorrect email")
     private String email;
 
+    @Size(min = 1, max = 20, message = "password should consist of no less than 5, and no more than 16 characters")
     public String direction;
+    @Size(min = 1, max = 40, message = "password should consist of no less than 5, and no more than 16 characters")
+    public String gallery;
 
     public String getRepassword() {
         return repassword;
@@ -84,4 +87,11 @@ public class ArtistCreationForm {
         this.email = email;
     }
 
+    public String getGallery() {
+        return gallery;
+    }
+
+    public void setGallery(String gallery) {
+        this.gallery = gallery;
+    }
 }

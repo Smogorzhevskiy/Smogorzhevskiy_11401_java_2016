@@ -10,7 +10,7 @@ import java.util.List;
  * Created by User on 19.04.16.
  */
 public interface PictureService {
-    Picture createPicture(PictureCreationForm form, Artist artist);
+    Picture createPicture(PictureCreationForm form);
     void deletePicture(java.lang.Integer id);
     Picture findOneById(java.lang.Integer id);
     List<Picture> findAllByArtist(Artist artist);

@@ -9,14 +9,14 @@
 
     <security:http auto-config="true" use-expressions="true">
         <security:intercept-url pattern="/login" access="isAnonymous()"/>
-        <security:intercept-url pattern="/registration" access="isAnonymous()"/>
+        <security:intercept-url pattern="/registration/**" access="isAnonymous()"/>
         <security:intercept-url pattern="/main" access="permitAll()"/>
         <security:intercept-url pattern="/resources/**" access="permitAll()"/>
         <security:intercept-url pattern="/admin/**" access="hasAnyRole('ROLE_ADMIN')"/>
-        <security:intercept-url pattern="/artist/**" access="isAnonymous()"/>
+        <security:intercept-url pattern="/artist/**" access="permitAll()"/>
         <security:form-login
-                login-page="/login"
-                login-processing-url="/login/process"
+                login-page="/main"
+                login-processing-url="/main/process"
                 password-parameter="password"
                 username-parameter="login"
                 default-target-url="/default"

@@ -14,5 +14,5 @@ public interface GalleryService {
 
     Gallery findOneByName(String name);
 
-    Gallery findOneById(Long id);
+    Gallery findOneById(Integer id);
 }

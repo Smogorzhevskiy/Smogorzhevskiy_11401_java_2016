@@ -21,4 +21,9 @@ public class DirectionServiceImpl implements DirectionService {
     public List<Direction> findAll() {
         return directionRepository.findAll();
     }
+
+    @Override
+    public Direction findOneByName(String name) {
+        return directionRepository.findOneByName(name);
+    }
 }

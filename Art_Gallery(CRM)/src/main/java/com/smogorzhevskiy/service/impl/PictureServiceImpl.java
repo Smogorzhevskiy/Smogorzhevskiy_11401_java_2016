@@ -1,9 +1,11 @@
 package com.smogorzhevskiy.service.impl;
 
 import com.smogorzhevskiy.entities.Artist;
+import com.smogorzhevskiy.entities.Gallery;
 import com.smogorzhevskiy.entities.Picture;
 import com.smogorzhevskiy.forms.PictureCreationForm;
 import com.smogorzhevskiy.repository.ArtistRepository;
+import com.smogorzhevskiy.repository.GalleryRepository;
 import com.smogorzhevskiy.repository.PictureRepository;
 import com.smogorzhevskiy.service.PictureService;
 import com.smogorzhevskiy.utility.transformers.PictureFromCreateForm;
@@ -22,16 +24,17 @@ public class PictureServiceImpl implements PictureService {
     private PictureRepository pictureRepository;
     @Autowired
     private ArtistRepository artistRepository;
+    @Autowired
+    private GalleryRepository galleryRepository;
 
     @Override
-    public Picture createPicture(PictureCreationForm form, Artist artist) {
+    public Picture createPicture(PictureCreationForm form) {
         if(form == null)
             return null;
         Picture picture = new Picture();
         picture.setName(form.getName());
         picture.setArtist_id(artistRepository.getOneByName(form.getArtist()).getId());
-
-
+        picture.setGallery_id(galleryRepository.findOneByName(form.getGallery()).getId());
         pictureRepository.save(picture);
         return  picture;
     }

@@ -8,7 +8,7 @@ import javax.validation.constraints.NotNull;
  */
 @Entity
 @Table(name = "gallery")
-@SequenceGenerator(sequenceName = "gallery-id_seq", name = "gallery_gen", allocationSize = 1)
+@SequenceGenerator(sequenceName = "gallery_id_seq", name = "gallery_gen", allocationSize = 1)
 public class Gallery {
     private Integer id;
     private String name;

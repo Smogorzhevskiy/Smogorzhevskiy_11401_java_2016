@@ -8,13 +8,12 @@ import javax.validation.constraints.NotNull;
  */
 @Entity
 @Table(name = "viewer")
-@SequenceGenerator(sequenceName = "viewer-id_seq", name = "viewer_gen", allocationSize = 1)
+@SequenceGenerator(sequenceName = "viewer_id_seq", name = "viewer_gen", allocationSize = 1)
 public class Viewer {
     private Integer id;
     private Credential credential;
     private String name;
     private String surname;
-    private String photo;
     private String phoneNumber;
 
     @Id
@@ -49,15 +48,6 @@ public class Viewer {
         this.surname = surname;
     }
 
-    @Basic
-    @Column(name = "photo")
-    public String getPhoto() {
-        return photo;
-    }
-
-    public void setPhoto(String photo) {
-        this.photo = photo;
-    }
 
     @Basic
     @Column(name = "phone_number")
@@ -89,7 +79,6 @@ public class Viewer {
         if (id != null ? !id.equals(that.id) : that.id != null) return false;
         if (name != null ? !name.equals(that.name) : that.name != null) return false;
         if (surname != null ? !surname.equals(that.surname) : that.surname != null) return false;
-        if (photo != null ? !photo.equals(that.photo) : that.photo != null) return false;
         if (phoneNumber != null ? !phoneNumber.equals(that.phoneNumber) : that.phoneNumber != null) return false;
 
         return true;
@@ -100,7 +89,6 @@ public class Viewer {
         int result = id != null ? id.hashCode() : 0;
         result = 31 * result + (name != null ? name.hashCode() : 0);
         result = 31 * result + (surname != null ? surname.hashCode() : 0);
-        result = 31 * result + (photo != null ? photo.hashCode() : 0);
         result = 31 * result + (phoneNumber != null ? phoneNumber.hashCode() : 0);
         return result;
     }

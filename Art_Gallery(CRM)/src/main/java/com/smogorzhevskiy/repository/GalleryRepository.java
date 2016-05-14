@@ -20,7 +20,7 @@ public interface GalleryRepository extends JpaRepository<Gallery,Integer> {
 
     Gallery findOneByName(String name);
 
-    Gallery findOneById(Long id);
+    Gallery findOneById(Integer id);
 //    //language=SQL
 //    @Query("SELECT NAME FROM gallery c WHERE c.name= :name")
 //    Gallery findByName(@Param("name") String name);

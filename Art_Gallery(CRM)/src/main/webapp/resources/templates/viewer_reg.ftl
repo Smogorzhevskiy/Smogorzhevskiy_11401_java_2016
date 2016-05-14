@@ -6,7 +6,7 @@
             <#if error??>
                 <strong>Oh snap!</strong> Change a few things up and try submitting again.
             </#if>
-            <form action="/registration/artist" method="post" name="artist_form" role="form">
+            <form action="/registration/viewer" method="post" name="artist_form" role="form">
                 <div>
                     <label>Login</label>
                     <input placeholder="Enter login" type="text" name="login" id="login"/>
@@ -28,22 +28,18 @@
                     <input  placeholder="Reenter password" type="password" name="repassword" id="repassword"/>
                 </div>
                 <div >
-                    <label>Email</label>
-                    <input  placeholder="Enter email" type="email" name="email" id="email"/>
+                    <label>Phone</label>
+                    <input  placeholder="Enter Phone" type="text" name="phone" id="phone"/>
                 </div>
-                <div>
-                <label>Direction</label>
-                    <input  placeholder="Enter direction" type="text" name="direction" id="direction"/>
-                </div>
-                <div>
-                    <label>Gallery</label>
-                    <input  placeholder="Enter gallery" type="text" name="gallery" id="gallery"/>
-                </div>
+                <div >
+                <label>Email</label>
+                <input  placeholder="Enter Phone" type="email" name="email" id="email"/>
+        </div>
 
                 <button type="submit" value="Register">Reg</button>
-               </form>
+            </form>
         </div>
     </div>
 </div>
 </#macro>
-<@main title="Artist_reg"/>
+<@main title="Viewer_reg"/>

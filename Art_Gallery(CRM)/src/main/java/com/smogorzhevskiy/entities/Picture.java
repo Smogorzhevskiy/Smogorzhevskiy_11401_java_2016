@@ -8,7 +8,7 @@ import javax.validation.constraints.NotNull;
  */
 @Entity
 @Table(name = "picture")
-@SequenceGenerator(sequenceName = "picture-id_seq", name = "picture_gen", allocationSize = 1)
+@SequenceGenerator(sequenceName = "picture_id_seq", name = "picture_gen", allocationSize = 1)
 public class Picture {
     private Integer id;
     private Artist artist;
@@ -44,8 +44,11 @@ public class Picture {
         this.artist.setId(artist_id);
     }
 
+    public Integer getGallery_id(){return gallery.getId();}
+    public void setGallery_id(Integer gallery_id){this.gallery.setId(gallery_id);}
+
     @ManyToOne
-    @JoinColumn(name = "gallery_id")
+    @JoinColumn(name = "gallery_id", insertable = false, updatable = false)
     public Gallery getGallery() {
         return gallery;
     }

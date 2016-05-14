@@ -33,7 +33,7 @@ public class GalleryServiceImpl implements GalleryService {
     }
 
     @Override
-    public Gallery findOneById(Long id) {
+    public Gallery findOneById(Integer id) {
         return galleryRepository.findOneById(id);
     }
 }

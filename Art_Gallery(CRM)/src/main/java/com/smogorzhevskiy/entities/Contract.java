@@ -9,7 +9,7 @@ import java.sql.Date;
  */
 @Entity
 @Table(name = "contract")
-@SequenceGenerator(sequenceName = "contract-id_seq", name = "contract_gen", allocationSize = 1)
+@SequenceGenerator(sequenceName = "contract_id_seq", name = "contract_gen", allocationSize = 1)
 public class Contract {
     private java.lang.Integer id;
     private Artist artist;

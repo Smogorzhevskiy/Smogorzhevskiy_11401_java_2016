@@ -10,60 +10,80 @@ import javax.validation.constraints.Size;
  */
 public class ViewerRegistrationForm {
 
-        @Size(min = 1, max = 20, message = "incorrect name")
-        private String name;
+    @Size(min = 1, max = 20, message = "incorrect name")
+    private String name;
 
-        @Size(min = 1, max = 50, message = "incorrect surname")
-        private String surname;
+    @Size(min = 1, max = 50, message = "incorrect surname")
+    private String surname;
 
-        @Size(min = 3, max = 12, message = "login should consist of no less than 3, and no more than 12 characters")
-        private String login;
+    @Size(min = 3, max = 12, message = "login should consist of no less than 3, and no more than 12 characters")
+    private String login;
 
-        @Size(min = 5, max = 16, message = "password should consist of no less than 5, and no more than 16 characters")
-        private String password;
+    @Size(min = 5, max = 16, message = "password should consist of no less than 5, and no more than 16 characters")
+    private String password;
 
-        @Email(regexp = ".+@.+", message = "incorrect email")
-        private String email;
+    @Size(min = 5, max = 16, message = "password should consist of no less than 5, and no more than 16 characters")
+    private String repassword;
+    @Size(min = 11, max = 11, message = "phone number should consist of no less than 11")
+    private String phone;
 
+    @Email(regexp = ".+@.+", message = "incorrect email")
+    private String email;
 
-        public String getEmail() {
-            return email;
-        }
+    public String getPhone() {
+        return phone;
+    }
 
-        public void setEmail(String email) {
-            this.email = email;
-        }
+    public void setPhone(String phone) {
+        this.phone = phone;
+    }
 
-        public String getLogin() {
-            return login;
-        }
+    public String getRepassword() {
+        return repassword;
+    }
 
-        public void setLogin(String login) {
-            this.login = login;
-        }
+    public void setRepassword(String repassword) {
+        this.repassword = repassword;
+    }
 
-        public String getName() {
-            return name;
-        }
+    public String getEmail() {
+        return email;
+    }
 
-        public void setName(String name) {
-            this.name = name;
-        }
+    public void setEmail(String email) {
+        this.email = email;
+    }
 
-        public String getPassword() {
-            return password;
-        }
+    public String getLogin() {
+        return login;
+    }
 
-        public void setPassword(String password) {
-            this.password = password;
-        }
+    public void setLogin(String login) {
+        this.login = login;
+    }
 
-        public String getSurname() {
-            return surname;
-        }
+    public String getName() {
+        return name;
+    }
 
-        public void setSurname(String surname) {
-            this.surname = surname;
-        }
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public String getPassword() {
+        return password;
+    }
+
+    public void setPassword(String password) {
+        this.password = password;
+    }
+
+    public String getSurname() {
+        return surname;
+    }
+
+    public void setSurname(String surname) {
+        this.surname = surname;
+    }
 
 }

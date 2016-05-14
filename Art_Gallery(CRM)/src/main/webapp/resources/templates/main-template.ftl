@@ -1,7 +1,6 @@
 <#macro main title="Hello!" customScripts=[] customStyles=[]>
     <#assign security=JspTaglibs["http://www.springframework.org/security/tags"]/>
     <#assign sf=JspTaglibs["http://www.springframework.org/tags/form"]>
-    <#assign tg=JspTaglibs["http://www.springframework.org/tags"]>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -33,7 +32,7 @@
     <script src="/resources/js/html5shiv.js"></script>
     <script src="/resources/js/jquery-1.10.2.min.js"></script>
     <script src="/resources/js/jquery-migrate-1.2.1.min.js"></script>
-    <script src="/resources/js/bootstrap.min.js"></script>
+    <#--<script src="/resources/js/bootstrap.min.js"></script>-->
     <script src="/resources/js/jquery.easing.1.3.js"></script>
     <script type="text/javascript" src="/resources/fancybox/jquery.fancybox.pack-v=2.1.5.js"></script>
     <script src="/resources/js/script.js"></script>
@@ -41,7 +40,7 @@
 
     <!-- fancybox init -->
     <script>
-        $(document).ready(function () {
+        $(document).ready(function (e) {
             var lis = $('.nav > li');
             menu_focus(lis[0], 1);
 

@@ -1,5 +1,6 @@
 package com.smogorzhevskiy.service;
 
+import com.smogorzhevskiy.entities.Artist;
 import com.smogorzhevskiy.entities.Direction;
 
 import java.util.List;
@@ -9,4 +10,5 @@ import java.util.List;
  */
 public interface DirectionService {
     List<Direction> findAll();
+    Direction findOneByName(String name);
 }

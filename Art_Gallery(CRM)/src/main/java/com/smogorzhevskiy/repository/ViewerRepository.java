@@ -13,5 +13,5 @@ import org.springframework.stereotype.Repository;
 public interface ViewerRepository extends JpaRepository<Viewer,Integer>{
 //    //language=SQL
 //    @Query("SELECT NAME FROM viwer c WHERE c.name= :name")
-//    Viewer findByName(@Param("name") String name);
+    Viewer findOneByName(String name);
 }

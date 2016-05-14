@@ -6,6 +6,6 @@ package com.smogorzhevskiy.entities.enums;
 public enum Role {
     ROLE_ARTIST,
     ROLE_ADMIN,
-    Role_VIEWER,
+    ROLE_VIEWER,
     ROLE_WORKER
 }

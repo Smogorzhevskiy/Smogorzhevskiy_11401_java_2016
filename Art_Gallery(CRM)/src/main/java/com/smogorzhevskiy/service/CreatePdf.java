@@ -22,9 +22,9 @@ import java.util.List;
 @Component
 public class CreatePdf {
     public String create(Contract contract) throws DocumentException, IOException {
-        String CATALINA_HOME = "C:\\Other\\apache-tomcat-8.0.33\\pdf\\";
+        String HOME = "/Users/User/Desktop";
         Document document = new Document();
-        PdfWriter.getInstance(document, new FileOutputStream(CATALINA_HOME +contract.getArtist().getCredential().getLogin()+".pdf"));
+        PdfWriter.getInstance(document, new FileOutputStream(HOME +contract.getArtist().getCredential().getLogin()+".pdf"));
         document.open();
 
         document.add(new Paragraph("Publisher info"));
@@ -49,6 +49,6 @@ public class CreatePdf {
         document.add(new Paragraph("Admin sign:_________________________"));
 
         document.close();
-        return CATALINA_HOME +contract.getArtist().getCredential().getLogin()+".pdf";
+        return HOME +contract.getArtist().getCredential().getLogin()+".pdf";
     }
 }

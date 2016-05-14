@@ -49,7 +49,7 @@ public class AuthenticController {
             return "redirect:/sysadmin";
         } else {
             request.getSession().setAttribute("user", null);
-            return "/login";
+            return "/main";
         }
     }
 }

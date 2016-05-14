@@ -4,7 +4,7 @@
 <#--<#macro m_body>-->
 <body>
 
-<section id="main-slider" class="carousel">
+<section>
     <div class="col-md-5 col-lg-offset-5 text-center">
         <form action="/login/process" method="post" class="form-horizontal text-center">
             <div class="form-group text-center">
@@ -18,13 +18,13 @@
                 </div>
             </div>
             <div class="form-group text-center">
-                <div class="col-md-5">
-                    Remember me <input type="checkbox" id="remember" name="_spring_security_remember_me" value="true">
-                </div>
+                <#--<div class="col-md-5">-->
+                    <#--Remember me <input type="checkbox" id="remember" name="_spring_security_remember_me" value="true"></input>-->
+                <#--</div>-->
             </div>
             <div class="form-group text-center">
                 <div class="col-md-5">
-                    <button type="submit" class="btn btn-success">Войти</button>
+                    <input type="submit" class="btn btn-success" value="Войти"/>
                 </div>
             </div>
 

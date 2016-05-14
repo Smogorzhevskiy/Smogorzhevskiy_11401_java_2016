@@ -10,7 +10,7 @@ import javax.validation.constraints.NotNull;
  */
 @Entity
 @Table(name = "role")
-@SequenceGenerator(sequenceName = "role-id_seq", name = "role_gen", allocationSize = 1)
+@SequenceGenerator(sequenceName = "role_id_seq", name = "role_gen", allocationSize = 1)
 public class Credential {
     private Integer id;
     private Role role;
@@ -19,8 +19,8 @@ public class Credential {
     private String email;
 
     @Id
-    @Column(name = "id")
     @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "role_gen")
+    @Column(name = "id")
     public Integer getId() {
         return id;
     }
@@ -38,7 +38,7 @@ public class Credential {
         this.role = role;
     }
 
-//    @Basic
+    @Basic
     @Column(name = "login")
     public String getLogin() {
         return login;
@@ -48,7 +48,7 @@ public class Credential {
         this.login = login;
     }
 
-//    @Basic
+    @Basic
     @Column(name = "password")
     public String getPassword() {
         return password;
@@ -58,7 +58,7 @@ public class Credential {
         this.password = password;
     }
 
-//    @Basic
+    @Basic
     @Column(name = "email")
     public String getEmail() {
         return email;
