@@ -1,5 +1,6 @@
 package com.smogorzhevskiy.repository;
 
+import com.smogorzhevskiy.entities.Artist;
 import com.smogorzhevskiy.entities.Contract;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
@@ -15,10 +16,9 @@ import java.util.List;
 @Repository
 public interface ContractRepository extends JpaRepository<Contract,Integer> {
 
-    Contract findContractByArtist(String name);
+//    Artist findOneByArtist_id(String name);
     List<Contract> findAll();
 
     Contract findOneById(Integer id);
 
-    List<Contract> findAllContractByDateOfConclusion(Date dateOfConclusion);
 }

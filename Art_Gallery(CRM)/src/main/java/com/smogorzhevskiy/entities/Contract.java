@@ -14,7 +14,6 @@ public class Contract {
     private java.lang.Integer id;
     private Artist artist;
     private Gallery gallery;
-    private Date dateOfConclusion;
 
     @Id
     @Column(name = "id")
@@ -27,15 +26,7 @@ public class Contract {
         this.id = id;
     }
 
-    @Basic
-    @Column(name = "date_of_conclusion")
-    public Date getDateOfConclusion() {
-        return dateOfConclusion;
-    }
 
-    public void setDateOfConclusion(Date dateOfConclusion) {
-        this.dateOfConclusion = dateOfConclusion;
-    }
 
     @OneToOne
     @JoinColumn(name = "artist_id")
@@ -64,8 +55,6 @@ public class Contract {
         Contract that = (Contract) o;
 
         if (id != null ? !id.equals(that.id) : that.id != null) return false;
-        if (dateOfConclusion != null ? !dateOfConclusion.equals(that.dateOfConclusion) : that.dateOfConclusion != null)
-            return false;
 
         return true;
     }
@@ -73,7 +62,6 @@ public class Contract {
     @Override
     public int hashCode() {
         int result = id != null ? id.hashCode() : 0;
-        result = 31 * result + (dateOfConclusion != null ? dateOfConclusion.hashCode() : 0);
         return result;
     }
 }

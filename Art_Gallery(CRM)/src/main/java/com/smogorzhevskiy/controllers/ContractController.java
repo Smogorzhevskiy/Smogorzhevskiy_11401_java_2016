@@ -24,10 +24,10 @@ public class ContractController {
     @Autowired
     CreatePdf createPdf;
 
-    @RequestMapping(value = "/files/{artist}", method = RequestMethod.GET, produces = "application/pdf")
-    @ResponseBody
-    public FileSystemResource getFile(@PathVariable("artist") String artist) throws DocumentException, IOException {
-        String filePath = createPdf.create(contractService.findContractByArtist(artist));
-        return new FileSystemResource(filePath);
-    }
+//    @RequestMapping(value = "/files/{artist}", method = RequestMethod.GET, produces = "application/pdf")
+//    @ResponseBody
+//    public FileSystemResource getFile(@PathVariable("artist") String artist) throws DocumentException, IOException {
+//        String filePath = createPdf.create(contractService.findContractByArtist(artist));
+//        return new FileSystemResource(filePath);
+//    }
 }

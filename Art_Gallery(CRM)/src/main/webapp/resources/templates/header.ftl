@@ -24,19 +24,19 @@
                     </@security.authorize>
 
                     <#--<li><a href="/medical_clinics">Медицинские клиники</a></li>-->
-                <@security.authorize access="!isAnonymous()">
-                    <li><a href="/default">Profile</a></li>
-                </@security.authorize>
-                <#--<@security.authorize access="hasRole('ROLE_DOCTOR')">-->
-                    <#--<li><a href="/doctor/appointments">Приём пациентов</a></li>-->
+                <#--<@security.authorize access="!isAnonymous()">-->
+                    <#--<li><a href="/default">Profile</a></li>-->
                 <#--</@security.authorize>-->
-                <@security.authorize access="isAnonymous()">
-                    <li><a href="/registration/">Зарегистрироваться</a></li>
-                    <li><a href="/login" id="login">Войти</a></li>
-                </@security.authorize>
-                <@security.authorize access="!isAnonymous()">
-                    <li><a href="/logout">Выйти</a></li>
-                </@security.authorize>
+                <#--&lt;#&ndash;<@security.authorize access="hasRole('ROLE_DOCTOR')">&ndash;&gt;-->
+                    <#--&lt;#&ndash;<li><a href="/doctor/appointments">Приём пациентов</a></li>&ndash;&gt;-->
+                <#--&lt;#&ndash;</@security.authorize>&ndash;&gt;-->
+                <#--<@security.authorize access="isAnonymous()">-->
+                    <#--<li><a href="/registration/">Зарегистрироваться</a></li>-->
+                    <#--<li><a href="/login" id="login">Войти</a></li>-->
+                <#--</@security.authorize>-->
+                <#--<@security.authorize access="!isAnonymous()">-->
+                    <#--<li><a href="/logout">Выйти</a></li>-->
+                <#--</@security.authorize>-->
                     <#--<li data-slide="1" class="col-12 col-sm-2"><a id="menu-link-1" href="#slide-1" title="Next Section"><span class="icon icon-home"></span> <span class="text">HOME</span></a></li>-->
                     <#--<li data-slide="2" class="col-12 col-sm-2"><a id="menu-link-2" href="#slide-2" title="Next Section"><span class="icon icon-user"></span> <span class="text">ABOUT US</span></a></li>-->
                     <#--<li data-slide="3" class="col-12 col-sm-2"><a id="menu-link-3" href="#slide-3" title="Next Section"><span class="icon icon-briefcase"></span> <span class="text">PORTFOLIO</span></a></li>-->

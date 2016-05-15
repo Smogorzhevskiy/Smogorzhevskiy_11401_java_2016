@@ -9,6 +9,7 @@
             <p>Name: ${artist.name}</p>
             <p>Email: ${admin.email}</p>
             <p>Login: ${admin.credential.login}</p>
+            <li><a href="/artist/add_contract">New Contract</a></li>
         <#else>
             error
         </#if>
